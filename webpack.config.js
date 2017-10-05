@@ -30,6 +30,7 @@ module.exports = {
           ]
     },
     devServer: {
+        contentBase: './src/client',
         compress: true,
         host: 'localhost',
         port: 5000,
