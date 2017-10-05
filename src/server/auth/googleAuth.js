@@ -1,6 +1,3 @@
-/**
- * Created by sourabh on 3/10/17.
- */
 const passport = require("passport");
 const googleStrategy = require("passport-google-oauth").OAuth2Strategy;
 const googleAuthConstants = require("../constants/constants");
@@ -8,9 +5,9 @@ const EmployeeSchema = require("../api/employee/employee.model");
 
 exports.useGoogle = () => {
     passport.use(new googleStrategy({
-            clientId: googleAuthConstants.clientID,
+            clientID: googleAuthConstants.clientID,
             clientSecret: googleAuthConstants.clientSecret,
-            callbackUrl: googleAuthConstants.callbackUrl,
+            callbackURL: googleAuthConstants.callbackUrl,
         },
         (accessToken, refreshToken, profile, done) => {
             if (profile._json.domain === 'tothenew.com') {

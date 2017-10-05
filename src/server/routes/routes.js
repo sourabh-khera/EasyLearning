@@ -2,8 +2,9 @@
  * Created by sourabh on 3/10/17.
  */
 const passport = require("passport");
-const googleStrategy = require("./auth/googleAuth");
-const jwt_Token = require("json-web-token");
+const googleStrategy = require("../auth/googleAuth");
+const jwt_Token = require("jsonwebtoken");
+const cors = require('cors');
 
 const loggedIn = (req, res, next) => {
     const token = req.headers.authorization;
@@ -26,6 +27,7 @@ const loggedIn = (req, res, next) => {
 module.exports = (app) => {
 
     app.use(passport.initialize());
+    app.use(cors());
     googleStrategy.useGoogle();
 
     app.get("/login", passport.authenticate('google', {

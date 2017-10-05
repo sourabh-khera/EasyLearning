@@ -1,7 +1,3 @@
-/**
- * Created by sourabh on 3/10/17.
- */
-
 const Mongoose = require("mongoose");
 
 Mongoose.connect("mongodb://localhost/easyLearning");
