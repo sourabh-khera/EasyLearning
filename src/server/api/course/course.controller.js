@@ -3,6 +3,7 @@ const videoService = require('./../video/video.service');
 const async = require('async');
 
 exports.createCourse = (req,res, next) => {
+    console.log(req.body,'--------')
     const course = {
         courseName: req.body.name,
         courseType: req.body.type,
@@ -12,9 +13,7 @@ exports.createCourse = (req,res, next) => {
             durationNo: req.body.time.durationNo || 0
         },
         description: req.body.description || '',
-        createdBy: {
-            ...req.user
-        }
+        createdBy: req.user
     };
     courseService.save(course,res).then((data) => {
         if( data ) {

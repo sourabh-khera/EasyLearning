@@ -6,6 +6,7 @@ const googleStrategy = require("../auth/googleAuth");
 const jwt_Token = require("jsonwebtoken");
 const cors = require('cors');
 const apiRoutes = require('../api');
+const bodyParser = require('body-parser');
 
 const loggedIn = (req, res, next) => {
     const token = req.headers.authorization;
@@ -28,8 +29,8 @@ module.exports = (app) => {
 
     app.use(passport.initialize());
     app.use(cors());
+    app.use(bodyParser());
     googleStrategy.useGoogle();
-
     app.get("/login", passport.authenticate('google', {
         session: false,
         scope: ['profile', 'email']
@@ -52,6 +53,5 @@ module.exports = (app) => {
             res.redirect('/')
         }
     });
-    app.use('/api/v1', apiRoutes);
-
+    app.use('/api/v1',apiRoutes);
 };
