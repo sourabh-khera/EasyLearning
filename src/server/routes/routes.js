@@ -5,20 +5,20 @@ const passport = require("passport");
 const googleStrategy = require("../auth/googleAuth");
 const jwt_Token = require("jsonwebtoken");
 const cors = require('cors');
+const apiRoutes = require('../api');
 
 const loggedIn = (req, res, next) => {
     const token = req.headers.authorization;
     if (token) {
         jwt_Token.verify(token, process.env.SECRET_KEY, (err, decode) => {
-                if (err) {
-                    res.status(500).send("invalid token")
-                } else {
-                    const decodedData = jwt_Token.decode(token);
-                    req.empId = decodedData.id;
-                    next();
-                }
+            if (err) {
+                res.status(500).send("invalid token")
+            } else {
+                const decodedData = jwt_Token.decode(token);
+                req.empId = decodedData.id;
+                next();
             }
-        )
+        })
     } else {
         res.send("plz send the token")
     }
@@ -41,7 +41,7 @@ module.exports = (app) => {
             empId: req.user.id
         };
 
-        const token = jwt_Token.sign(employee, process.env.SECRET_KEY, {expiresIn: 5000});
+        const token = jwt_Token.sign(employee, process.env.SECRET_KEY, { expiresIn: 5000 });
         if (true) {
             res.cookie('token', token, {
                 httpOnly: false
@@ -51,6 +51,7 @@ module.exports = (app) => {
         } else {
             res.redirect('/')
         }
-    })
+    });
+    app.use('/api/v1', apiRoutes);
 
 };

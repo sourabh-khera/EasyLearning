@@ -7,7 +7,7 @@ const Mongoose = require("mongoose");
 
 const EmployeeSchema = new Mongoose.Schema({
 
-    empName: {
+    name: {
         type: String
     },
     email: {
@@ -18,11 +18,17 @@ const EmployeeSchema = new Mongoose.Schema({
     },
     role: {
         type: String,
-        enum: ['user','admin'],
+        enum: ['USER', 'ADMIN'],
         default: 'user'
-    }
+    },
+    designation: {
+        type: String
+    },
+    competency: {
+        type: String
+    },
+    createdAt: { type: Number, default: Date.now() }
 
-
-}, {versionKey: false});
+}, { versionKey: false });
 
 module.exports = Mongoose.model('Employees', EmployeeSchema);
