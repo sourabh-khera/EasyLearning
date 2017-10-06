@@ -1,11 +1,14 @@
-import React from "react"
-import {Provider} from "react-redux"
-import {store} from "./client/store"
-import App from "./client/app"
-import {render} from "react-dom"
+import React from "react";
+import { Provider } from 'react-redux';
+import {render} from "react-dom";
+import App from "./client/app";
+import configureStore from './client/store/configureStore';
+import reducers from './client/reducers';
 const app = document.getElementById('root');
 
+const store = configureStore(reducers);
 render(
-   //Provider needs to be added since store has not been made we will add it later.
-        <App/>,app
+   <Provider store={store}>
+     <App/>
+   </Provider>,app
 );
