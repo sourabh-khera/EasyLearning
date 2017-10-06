@@ -5,7 +5,7 @@ class  Login extends Component{
     render(){
         return(
             <div>
-                <button><a href='http://localhost:3000/login'>LOGIN</a></button>
+                <button><a href='/login'>LOGIN</a></button>
             </div>
         )
     }
