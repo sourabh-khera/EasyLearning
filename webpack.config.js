@@ -5,9 +5,8 @@ module.exports = {
 
     entry: "./src/index.js",
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname,'dist'),
         filename: 'bundle.js',
-        publicPath: '/',
     },
     module: {
         loaders: [
@@ -29,14 +28,4 @@ module.exports = {
             }
           ]
     },
-    devServer: {
-        contentBase: './src/client',
-        compress: true,
-        host: 'localhost',
-        port: 5000,
-        historyApiFallback: true,
-    }
-
 };
-
-

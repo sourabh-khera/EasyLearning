@@ -5,12 +5,11 @@ class  Login extends Component{
     render(){
         return(
             <div>
-                <button onClick={this.props.authenticateEmployee()}>LOGIN</button>
+                <button><a href='http://localhost:3000/login'>LOGIN</a></button>
             </div>
         )
     }
 }
-
 
 const mapDispatchToProps = (dispatch) => ({
     authenticateEmployee: () => dispatch(authenticateEmployee())

@@ -11,11 +11,11 @@ exports.useGoogle = () => {
         },
         (accessToken, refreshToken, profile, done) => {
             if (profile._json.domain === 'tothenew.com') {
-                EmployeeSchema.findOne({
+              EmployeeSchema.findOne({
                     email: profile.emails[0].value
                 }, (err, user) => {
                     if (user) {
-                        return done(null, user)
+                        return done(null, user);
                     }
                     else {
                         EmployeeSchema.create({
