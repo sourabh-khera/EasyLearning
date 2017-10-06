@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -67,10 +67,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-/**
- * Created by sourabh on 29/9/17.
- */
-
+throw new Error("Module build failed: Error: Couldn't find preset \"stage-0\" relative to directory \"/home/sourabh/EasyLearning\"\n    at /home/sourabh/EasyLearning/node_modules/babel-core/lib/transformation/file/options/option-manager.js:293:19\n    at Array.map (native)\n    at OptionManager.resolvePresets (/home/sourabh/EasyLearning/node_modules/babel-core/lib/transformation/file/options/option-manager.js:275:20)\n    at OptionManager.mergePresets (/home/sourabh/EasyLearning/node_modules/babel-core/lib/transformation/file/options/option-manager.js:264:10)\n    at OptionManager.mergeOptions (/home/sourabh/EasyLearning/node_modules/babel-core/lib/transformation/file/options/option-manager.js:249:14)\n    at OptionManager.init (/home/sourabh/EasyLearning/node_modules/babel-core/lib/transformation/file/options/option-manager.js:368:12)\n    at File.initOptions (/home/sourabh/EasyLearning/node_modules/babel-core/lib/transformation/file/index.js:212:65)\n    at new File (/home/sourabh/EasyLearning/node_modules/babel-core/lib/transformation/file/index.js:135:24)\n    at Pipeline.transform (/home/sourabh/EasyLearning/node_modules/babel-core/lib/transformation/pipeline.js:46:16)\n    at transpile (/home/sourabh/EasyLearning/node_modules/babel-loader/lib/index.js:50:20)\n    at Object.module.exports (/home/sourabh/EasyLearning/node_modules/babel-loader/lib/index.js:175:20)");
 
 /***/ })
 /******/ ]);
