@@ -1,0 +1,1 @@
+export {authenticateEmployee} from "./async/authAsync";
